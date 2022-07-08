@@ -7,7 +7,9 @@ This probject implements the test application described in [Create your first US
 
 This repository contains three [MPLAB.X](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide) [Harmony 3](https://www.microchip.com/en-us/tools-resources/configure/mplab-harmony) projects, one each for the [SAM E70 Xplained Ultra Evaluation Kit](https://www.microchip.com/en-us/development-tool/DM320113), the [SAM E54 Xplained Pro evaluation kit](https://www.microchip.com/en-us/development-tool/ATSAME54-XPRO) and the [SAM D21 Xplained Pro evaluation kit](https://www.microchip.com/en-us/development-tool/atsamd21-xpro).  The higher level code is shared among the three projects.
 
-Implementation Notes:
+Note: In order to run the examples, you will need an On The Go (OTG) USB A Female to micro-usb male adapter cable.  This is not mentioned in the online tutorial.  You'll also need a USB thumb drive.
+
+## Implementation Notes:
 
 In the SAME70 project, I was getting this error:
 
