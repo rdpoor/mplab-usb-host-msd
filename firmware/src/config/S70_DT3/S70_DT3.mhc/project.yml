@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: A8FC30E5EE0309647CB5D749F917B3A6
+- generatedChecksum: B26C45E2603F902F49BF9F08B9991241
   logicalPath: config/S70_DT3/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A8FC30E5EE0309647CB5D749F917B3A6
+  userChecksum: B26C45E2603F902F49BF9F08B9991241
 - generatedChecksum: D23DF612DB8267EDD9F5F3A463A02DB2
   logicalPath: config/S70_DT3/peripheral/efc
   name: plib_efc.c
@@ -271,7 +271,7 @@ files:
   physicalPath: bsp
   security: NON_SECURE
   type: HEADER
-  userChecksum: 1CC4A4F2A70990A31F79E1541BB62BE6
+  userChecksum: 36F55CE892BE64F582CFEA6FA578910D
 - generatedChecksum: 14F1AD56D242EFD0AF76849C6ADFECC4
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: cachel1_armv7.h

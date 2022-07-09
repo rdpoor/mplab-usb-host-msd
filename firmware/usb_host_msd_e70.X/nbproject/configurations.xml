@@ -368,6 +368,23 @@
         <itemPath>../src/config/E70_XULT/E70_XULT.mhc/usb_host.yml</itemPath>
         <itemPath>../src/config/E70_XULT/E70_XULT.mhc/usb_host_msd.yml</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="S70_DT3.mhc" projectFiles="true">
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/BSP_default.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/core.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/drv_usbhs_v1.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/efc.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/project.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/usb_host.yml</itemPath>
+        <itemPath>../src/config/S70_DT3/S70_DT3.mhc/usb_host_msd.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/E70_XULT/harmony-manifest-success.yml</itemPath>
     </logicalFolder>

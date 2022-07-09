@@ -27,6 +27,24 @@
 
 
 
+/*********************************************************************************
+Initialize Slow Clock (SLCK)
+*********************************************************************************/
+
+static void CLK_SlowClockInitialize(void)
+{
+    /* External clock signal on XIN32 pin is selected as the Slow Clock (SLCK) source.
+       Bypass 32K Crystal Oscillator  */
+    SUPC_REGS->SUPC_MR |= SUPC_MR_KEY_PASSWD | SUPC_MR_OSCBYPASS_BYPASS;
+    SUPC_REGS->SUPC_CR |= SUPC_CR_KEY_PASSWD | SUPC_CR_XTALSEL_CRYSTAL_SEL;
+
+    /* Wait until the external clock signal is ready and
+       Slow Clock (SLCK) is switched to external clock signal */
+    while (!(SUPC_REGS->SUPC_SR & SUPC_SR_OSCSEL_Msk))
+    {
+    }
+
+}
 
 
 /*********************************************************************************
@@ -37,6 +55,12 @@ static void CLK_MainClockInitialize(void)
     /* Disable Main Crystal Oscillator and Enable External Clock Signal on XIN pin  */
     PMC_REGS->CKGR_MOR = (PMC_REGS->CKGR_MOR & ~CKGR_MOR_MOSCXTEN_Msk) | CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCXTBY_Msk;
 
+     /* External clock signal (XIN pin) is selected as the Main Clock (MAINCK) source.
+        Switch Main Clock (MAINCK) to External signal on XIN pin */
+    PMC_REGS->CKGR_MOR |= CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCSEL_Msk;
+
+    /* Wait until MAINCK is switched to External Clock Signal (XIN pin) */
+    while ( (PMC_REGS->PMC_SR & PMC_SR_MOSCSELS_Msk) != PMC_SR_MOSCSELS_Msk);
 
 
     /* Enable the RC Oscillator */
@@ -51,9 +75,6 @@ static void CLK_MainClockInitialize(void)
     /* Wait until the RC oscillator clock is ready */
     while( (PMC_REGS->PMC_SR& PMC_SR_MOSCRCS_Msk) != PMC_SR_MOSCRCS_Msk);
 
-    /* Main RC Oscillator is selected as the Main Clock (MAINCK) source.
-       Switch Main Clock (MAINCK) to the RC Oscillator clock */
-    PMC_REGS->CKGR_MOR = (PMC_REGS->CKGR_MOR & ~CKGR_MOR_MOSCSEL_Msk) | CKGR_MOR_KEY_PASSWD;
 
 }
 
@@ -144,6 +165,8 @@ Clock Initialize
 void CLOCK_Initialize( void )
 {
 
+    /* Initialize Slow Clock */
+    CLK_SlowClockInitialize();
 
     /* Initialize Main Clock */
     CLK_MainClockInitialize();
